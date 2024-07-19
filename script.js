@@ -1,5 +1,3 @@
-gsap.registerPlugin(ScrollTrigger);
-
 const scrollToTopBtn = document.getElementById("scroll-top");
 scrollToTopBtn.addEventListener("click", () => {
   window.scroll(0, 0);
@@ -7,25 +5,6 @@ scrollToTopBtn.addEventListener("click", () => {
 
 const footer = document.querySelector(".footer");
 const fixedNav = document.querySelector(".navigation.fixed");
-
-function getStartStopAnimate() {
-  if (window.innerWidth < 768) {
-    return "top bottom";
-  }
-  return "90% bottom";
-}
-
-gsap.to(fixedNav, {
-  opacity: 0,
-  duration: 0.5,
-  ease: "linear",
-  scrollTrigger: {
-    trigger: footer,
-    start: getStartStopAnimate(),
-    end: getStartStopAnimate(),
-    toggleActions: "play none none reverse",
-  },
-});
 
 document.addEventListener("DOMContentLoaded", () => {
   initFrogMarquee();
@@ -59,4 +38,24 @@ function initTextMarquee() {
 const comingSoonUrls = document.querySelectorAll(".coming_soon");
 comingSoonUrls.forEach((url) => {
   url.addEventListener("click", (e) => e.preventDefault());
+});
+
+let currScroll = 0;
+document.addEventListener("scroll", () => {
+  const navigation = document.querySelector(".navigation.fixed");
+  if (scrollY < currScroll && !navigation.classList.contains("show")) {
+    navigation.classList.add("show");
+  }
+  const maxScrollPos =
+    document.documentElement.offsetHeight -
+    document.documentElement.clientHeight;
+
+  if (scrollY > maxScrollPos - window.innerHeight * 0.15) {
+    if (!navigation.className.includes("show")) return;
+    navigation.classList.remove("show");
+  } else {
+    if (navigation.className.includes("show")) return;
+    navigation.classList.add("show");
+  }
+  currScroll = window.scrollY;
 });

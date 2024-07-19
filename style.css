@@ -15,7 +15,9 @@
 
 body {
   font-family: var(--chakra-font);
-  background-color: var();
+  background-color: var(--main-green-col);
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 *,
@@ -78,6 +80,12 @@ a {
 }
 .navigation.fixed {
   position: fixed;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.navigation.fixed.show {
+  opacity: 1;
 }
 
 .navigation_ul {
