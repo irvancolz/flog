@@ -263,10 +263,11 @@ a {
   width: 100vw;
   height: 50vh;
   position: relative;
-  background-image: url(./assets/footer.png);
-  background-size: cover;
+  background-image: url(./assets/footer-sm.png);
+  background-size: cover, cover;
   overflow: hidden;
-  background-position: top center;
+  background-position: top center, top center;
+  background-repeat: no-repeat, no-repeat;
 }
 .footer_disclaimer {
   text-align: center;
@@ -344,7 +345,8 @@ a {
   .content .step {
     position: absolute;
     width: max(22.375rem, 20vw);
-    min-height: 10em;
+    min-height: 11em;
+    height: 11em;
   }
 
   .content .step * {
@@ -369,7 +371,10 @@ a {
   }
   .content .step .desc {
     font-size: 1rem;
-    max-width: 25em;
+    max-width: 18em;
+  }
+  .footer {
+    background-image: url(./assets/footer.png);
   }
   .footer_disclaimer {
     font-size: 1rem;
