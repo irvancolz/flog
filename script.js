@@ -55,3 +55,8 @@ function initTextMarquee() {
     container.appendChild(item);
   }
 }
+
+const comingSoonUrls = document.querySelectorAll(".coming_soon");
+comingSoonUrls.forEach((url) => {
+  url.addEventListener("click", (e) => e.preventDefault());
+});

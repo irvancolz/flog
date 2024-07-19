@@ -95,6 +95,35 @@ a {
   place-items: center;
 }
 
+.link.coming_soon {
+  position: relative;
+}
+
+.link.coming_soon::before {
+  content: "Coming Soon";
+  position: absolute;
+  top: -1em;
+  font-family: var(--fredoka-font);
+  font-weight: 300;
+  background-color: var(--main-white-col);
+  padding: 0.25rem 0.25rem;
+  text-align: center;
+  z-index: 100;
+  border-radius: 10rem;
+  font-size: 0.6rem;
+  color: black;
+  width: 8em;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.link.coming_soon:hover::before,
+.link.coming_soon:active::before,
+.link.coming_soon:focus::before,
+.link.coming_soon:focus-visible::before {
+  opacity: 1;
+}
+
 .hero img {
   aspect-ratio: 304/119;
   max-width: 304px;
