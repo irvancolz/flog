@@ -9,24 +9,34 @@ const fixedNav = document.querySelector(".navigation.fixed");
 document.addEventListener("DOMContentLoaded", () => {
   initFrogMarquee();
   initTextMarquee();
+  initSocialMediaMarquee();
 });
 
 function initFrogMarquee() {
-  const container = document.querySelectorAll(".flog_intro_marquee");
-  container.forEach((el) => {
-    for (let i = 0; i < 8; i++) {
-      const item = document.createElement("div");
-      item.classList.add("item");
-      item.classList.add("frog");
-      item.innerHTML = `<img src="./assets/frog-marquee.png" alt="" />`;
-      el.appendChild(item);
-    }
-  });
+  const container = document.querySelector(".banner_marquee");
+  for (let i = 0; i < 6; i++) {
+    const item = document.createElement("div");
+    item.classList.add("item");
+    item.classList.add("frog");
+    item.innerHTML = `<img src="./assets/marquee-banner.png" alt="" />`;
+    container.appendChild(item);
+  }
+}
+
+function initSocialMediaMarquee() {
+  const container = document.querySelector(".social_media_marquee");
+  for (let i = 0; i < 7; i++) {
+    const item = document.createElement("div");
+    item.classList.add("item");
+    item.classList.add("social");
+    item.innerHTML = `<img src="./assets/marquee-social-media.png" alt="" />`;
+    container.appendChild(item);
+  }
 }
 
 function initTextMarquee() {
   const container = document.querySelector(".flog_text_marquee");
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 50; i++) {
     const item = document.createElement("div");
     item.classList.add("item");
     item.classList.add("text");
