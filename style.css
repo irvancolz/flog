@@ -418,7 +418,7 @@ a {
     padding-inline: 3rem;
     right: max(10vh, 3rem);
     top: 50%;
-    translate: 0 min(-60%, 10rem);
+    translate: 0 min(-50%, -10rem);
   }
   .how_to_buy .buy_step {
     text-align: left;
