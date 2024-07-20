@@ -170,7 +170,7 @@ a {
   flex-wrap: nowrap;
   min-width: calc(200% + (49 * 0.5rem));
   gap: 0.5rem;
-  animation: marquee 25s linear infinite;
+  animation: marquee 10s linear infinite;
 }
 
 .marquee.banner_marquee {
